@@ -4,6 +4,8 @@ import {
 
 import "./styles.css";
 
+import { Logout } from '../Logout';
+
 export const Navbar = () => {
     return (
         <nav className="navbar">
@@ -19,6 +21,13 @@ export const Navbar = () => {
                 <li>
                     <NavLink to ="/me" activeClassName="nav-selected"> Profile </NavLink>
                 </li>
+
+
+           <li>
+                   <Logout/>
+                </li> 
+
+
             </ul>
         </nav>
     );
