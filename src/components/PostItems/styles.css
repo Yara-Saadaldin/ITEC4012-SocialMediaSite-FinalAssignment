@@ -1,0 +1,52 @@
+.postitem {
+    width: 600px;  
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin:2rem;
+    border: 0.1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+
+}
+
+.user{
+    display:flex;
+    flex-direction: row;
+    align-items:flex-start;
+    padding: 20px;
+
+}
+
+.caption{
+    display:flex;
+    flex-direction: row;
+    align-items:flex-start;
+    padding: 20px;
+}
+
+.profile-image {
+    border-radius: 50%;
+    float: left;
+    width:  40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.username {
+  
+    font-size: 16px;
+}
+
+.post-image {
+    width:600px;
+    height:100%;
+    object-fit:cover;
+    align-self: center;
+}
+
+.post-caption {
+    font-size: 14px;
+    margin-left: 6px;
+}
+
