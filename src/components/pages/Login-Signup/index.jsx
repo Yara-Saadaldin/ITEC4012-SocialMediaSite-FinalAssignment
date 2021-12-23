@@ -45,7 +45,7 @@ export const LoginOrSignup = () => {
             {mode === "login" && (
                 <form className="form-layout" onSubmit={handleSubmit(loginUser)}>
                     <h2>
-                        Welcome back, please sign in!</h2>
+                        Sign In</h2>
                     <br/>
 
                     <label htmlFor="user">
@@ -55,19 +55,19 @@ export const LoginOrSignup = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" required {...register('password')}/>
 
-                    <input type="submit" value="login"/>
+                    <input type="submit" value="Login"/>
                     <br/>
 
-                    <p>dont have an account with us yet? create a new account with your email and
-                        password</p>
-                    <button onClick={() => setMode("signup")}>Sign Up</button>
+                    <p> Don't have an account yet?<buttons onClick={() => setMode("signup")}> Sign Up</buttons></p>
+
+    
                 </form>
             )}
 
             {mode === "signup" && (
                 <form className="form-layout" onSubmit={handleSubmit(signUpUser)}>
                     <h2>
-                        Create a new account</h2>
+                        Create an Account</h2>
                     <br/>
 
                     <label htmlFor="user">
@@ -87,8 +87,11 @@ export const LoginOrSignup = () => {
                     <input type="submit" value="Sign up"/>
                     <br/>
 
-                    <p>have an account already?</p>
-                    <button onClick={() => setMode("login")}>Login</button>
+                    <p>Have an account already?<buttons onClick={() => setMode("login")}> Login</buttons> </p>
+
+                   
+                    
+               
                 </form>
             )}
         </div>

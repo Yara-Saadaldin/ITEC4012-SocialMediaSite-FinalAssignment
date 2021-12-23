@@ -36,13 +36,21 @@ export const CreateNewPostPage = () => {
             <div> <Navbar></Navbar> </div>
 
             <form className="formLayout" onSubmit={handleSubmit(submitNewPost)}>
-                <h2> Create a new post: </h2>
+                
+                <div className="Title">
+                <h2> Create a new post </h2>
+                </div>
 
                 <br/>
 
-                <label htmlFor="Image"> Image </label>
+                <div className="Label">
+                <label htmlFor="Image"> Enter an Image URL: </label>
+                </div>
+                <br/>
 
                 <input {...register("Image")} name="Image" required/>
+
+                <br/>
 
                 <input type="submit" value="Create Post"/>
 

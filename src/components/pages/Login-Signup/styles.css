@@ -1,29 +1,49 @@
 .form-layout {
     display: flex;
     flex-direction:column;
-    justify-content:center;
-    width:400px;
+    width:700px;
     margin: 0 auto;
     margin-top: 50px;
 }
 
+label{
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
 input{
-    height: 50px;
-    font-size: 1.5rem;
-    width: 400px;
+    height: 30px;
+    font-size: 18px;
+    width: 700px;
     margin-bottom: 10px;
 }
 
 input[type=submit]{
-    background:black;
+    height: 50px;
+    width: 708px;
+    background:#A988F2;
+    border:none;
+    color:white;
+    cursor:pointer;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+input[type=submit]:hover{
+    background:#8350F2;
     border:none;
     color:white;
     cursor:pointer;
 }
 
-button{
-    height:50px;
-    font-size:1.4rem;
-    background:transparent;
+buttons{
     cursor:pointer;
+    color: #A988F2;
+    font-weight: bold;
+}
+
+buttons:hover{
+    color:#8350F2;
 }

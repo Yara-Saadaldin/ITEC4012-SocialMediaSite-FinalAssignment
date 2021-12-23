@@ -51,7 +51,7 @@ export const ProfilePage = () => {
                 <Navbar></Navbar>
             </div>
 
-            <p>{user.email}</p>
+            <p className="UserEmail">{user.email}</p>
 
             <div className="mypost-container">
                 {postInfo.map((mypostitem) => (<MyPosts Image={mypostitem.Image.stringValue}/>))
