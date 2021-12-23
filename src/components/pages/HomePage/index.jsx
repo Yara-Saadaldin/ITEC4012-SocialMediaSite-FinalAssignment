@@ -1,10 +1,7 @@
 import "./styles.css";
 import {useEffect, useState} from 'react';
 import { PostItems } from "../../PostItems";
-
-import {getAuth, onAuthStateChanged} from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';//instead of useHistory!!!!!
-
+import { Navbar } from "../../Navbar";
 
 
 export const HomePage = () => {
@@ -12,23 +9,6 @@ export const HomePage = () => {
     const [postInfo, setPostInfo] = useState([]);
 
     const [loading, setLoading] = useState(true);
-
-
-    ////////use this to secure pages!!!
-    const navigate = useNavigate();//instead of useHistory!!!!!
-
-    //check if current user is logged into firebase
-    useEffect(
-        ()=> {
-            const auth = getAuth();
-            onAuthStateChanged(auth, (user) => {
-                if (!user){
-                    navigate('/login');///instead of history push
-                }
-            })
-        }, []
-    );
-    ////////////////////////////////
 
     useEffect(
         ()=> {
@@ -59,6 +39,10 @@ export const HomePage = () => {
     }
     return (
         <div className="homepage">
+
+            <div>
+                <Navbar></Navbar>
+            </div>
          
             <div className="post-container">
              {   
@@ -69,9 +53,7 @@ export const HomePage = () => {
             </div>
 
 
-            {
-                loading && <p>Loading data..</p>
-            }
+            { loading && <p>Loading data..</p> }
             
         </div>
     );

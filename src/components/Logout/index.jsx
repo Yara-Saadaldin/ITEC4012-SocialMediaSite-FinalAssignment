@@ -1,41 +1,30 @@
-import { getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
+import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
+import {useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 
-///
-import { useEffect,useState } from 'react';
 
 export const Logout = () => {
 
-    /////
-    // const [user,setUser] = useState(null);
-
-    // useEffect(
-    //     () => {
-    //         const auth = getAuth();
-    //         onAuthStateChanged(auth, (user) => {
-    //             if (user){
-    //                 setUser(user);
-    //             }else{
-    //                 setUser(null);
-    //             }
-    //         })
-    //     }, []
-    // )
-    ///////
-
     const logoutUser = async() => {
         const auth = getAuth();
-        try{
+        try {
             await signOut(auth);
-        } catch (error){
+        } catch (error) {
             console.log(error)
         }
     }
-    //////user &&
-    // user && 
 
-    return(
-    <button className="logout-btn" onClick={logoutUser}>
-        Logout
-    </button>
+    const navigate = useNavigate();
+    useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                navigate('/login');
+            }
+        })
+    }, []);
+
+    return (
+        <button className="logout-btn" onClick={logoutUser}> Logout </button>
     )
 }
