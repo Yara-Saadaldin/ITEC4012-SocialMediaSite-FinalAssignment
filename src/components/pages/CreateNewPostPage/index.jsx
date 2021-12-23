@@ -1,8 +1,7 @@
 import "./styles.css";
 import {useForm} from "react-hook-form";
-import {useNavigate} from 'react-router-dom'; 
+import {useNavigate} from 'react-router-dom';
 import {Navbar} from "../../Navbar";
-
 
 export const CreateNewPostPage = () => {
 
@@ -13,7 +12,9 @@ export const CreateNewPostPage = () => {
     const submitNewPost = async(formVals) => {
         const formattedData = {
             fields: {
-                Image: { stringValue: formVals.Image } 
+                Image: {
+                    stringValue: formVals.Image
+                }
             }
         }
 
@@ -33,19 +34,20 @@ export const CreateNewPostPage = () => {
     return (
         <div className="NewPost-page">
 
-            <div> <Navbar></Navbar> </div>
+            <div> <Navbar/> </div>
 
             <form className="formLayout" onSubmit={handleSubmit(submitNewPost)}>
-                
+
                 <div className="Title">
-                <h2> Create a new post </h2>
+                    <h2> Create a new post </h2>
                 </div>
 
                 <br/>
 
                 <div className="Label">
-                <label htmlFor="Image"> Enter an Image URL: </label>
+                    <label htmlFor="Image"> Enter an Image URL: </label>
                 </div>
+
                 <br/>
 
                 <input {...register("Image")} name="Image" required/>
@@ -55,6 +57,7 @@ export const CreateNewPostPage = () => {
                 <input type="submit" value="Create Post"/>
 
                 <br/>
+                
             </form>
         </div>
     );

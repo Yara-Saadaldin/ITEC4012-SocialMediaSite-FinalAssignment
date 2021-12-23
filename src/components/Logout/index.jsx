@@ -2,6 +2,7 @@ import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
 import {useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 
+
 export const Logout = () => {
 
     const logoutUser = async() => {

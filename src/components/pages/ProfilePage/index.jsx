@@ -6,15 +6,12 @@ import {Navbar} from "../../Navbar";
 
 export const ProfilePage = () => {
 
-    const [postInfo,
-        setPostInfo] = useState([]);
+    const [postInfo, setPostInfo] = useState([]);
 
-    const [loading,
-        setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     const auth = getAuth();
     const user = auth.currentUser;
-
     console.log('User email: ', auth.currentUser.email);
 
     useEffect(() => {
@@ -23,8 +20,7 @@ export const ProfilePage = () => {
 
     const getPostIfo = async() => {
         try {
-            const response = await fetch('https://firestore.googleapis.com/v1/projects/itec4012-socialmediasite/databases/' +
-                    '(default)/documents/My Posts/')
+            const response = await fetch('https://firestore.googleapis.com/v1/projects/itec4012-socialmediasite/databases/(default)/documents/My Posts/')
             const data = await response.json();
             console.log(data);
             const formattedData = data
@@ -44,22 +40,17 @@ export const ProfilePage = () => {
             setLoading(false);
         }
     }
-    return (
 
+    return (
         <div className="profilepage">
-            <div>
-                <Navbar></Navbar>
-            </div>
+
+            <div> <Navbar/> </div>
 
             <p className="UserEmail">{user.email}</p>
 
-            <div className="mypost-container">
-                {postInfo.map((mypostitem) => (<MyPosts Image={mypostitem.Image.stringValue}/>))
-}
-            </div>
+            <div className="mypost-container"> {postInfo.map((mypostitem) => (<MyPosts Image={mypostitem.Image.stringValue}/>))} </div>
 
-            {loading && <p>Loading data..</p>
-}
+            {loading && <p>Loading data..</p>}
 
         </div>
     );

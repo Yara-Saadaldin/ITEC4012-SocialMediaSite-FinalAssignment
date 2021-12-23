@@ -3,7 +3,7 @@
     height: 50px;
     margin-top: -9px;
 }
-  
+
 .navbar ul {
     display: flex;
     flex-direction: row;
@@ -20,11 +20,11 @@
 }
 
 .navbar a {
-    color:  #A988F2;
+    color: #A988F2;
     text-decoration: none;
 }
 
-.navbar .active{
+.navbar .active {
     color: #8350F2;
 }
 
@@ -32,22 +32,20 @@
     color: #8350F2;
 }
 
-.logout-btn{
+.logout-btn {
     font-size: 18px;
     background: #A988F2;
-	color: white;
-	border: none;
-    cursor:pointer;
+    color: white;
+    border: none;
+    cursor: pointer;
     margin-right: -15px;
     margin-left: 30px;
-    padding: 18px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 18px 40px;
     margin-top: -10px;
     font-weight: bold;
 }
 
-.logout-btn:hover{
+.logout-btn:hover {
     background: #F25C5C;
 }
 
